@@ -340,7 +340,7 @@ header {
     color: #fff;
     background-attachment: scroll;
     background-image: url('{{ site.baseurl }}/css/2019_style/img/header-bg.jpg');
-    background-position: center bottom;
+    background-position: center center;
     background-repeat: no-repeat;
     -webkit-background-size: 50%;
     -moz-background-size: 50%;
