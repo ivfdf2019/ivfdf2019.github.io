@@ -1,5 +1,6 @@
 <!-- Portfolio Modals -->
- {% for post in site.2019_team %}
+ {% assign team = site.2019_team | sort: 'order' %}
+ {% for post in team %}
     <div class="portfolio-modal modal fade" id="{{ post.name }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -16,7 +17,7 @@
                             <hr class="star-primary">
                             <img src="../css/2019_style/img/team/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
                             <p>{{ post.description }}</p>
-			    <p>Character reference: {{ post.reference }}
+			    <p>Character reference: <em>{{ post.reference }}</em>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
