@@ -335,7 +335,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 header {
-    height: 100vh;
+    height: 75vh;
     text-align: center;
     color: #fff;
     background-attachment: scroll;
@@ -349,7 +349,7 @@ header {
 }
 
 header .intro-text {
-    padding-top: 85vh;
+    padding-top: 65vh;
     padding-bottom: 50px;
 }
 
@@ -372,8 +372,8 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {    
     header .intro-text {
-        padding-top: 85vh;
-        padding-bottom: 200px;
+        padding-top: 65vh;
+        padding-bottom: 50px;
     }
 
     header .intro-text .intro-lead-in {
@@ -395,7 +395,7 @@ header .intro-text .intro-heading {
 }
 
 section {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 aside.clients h2,
@@ -416,7 +416,7 @@ section h3.section-subheading {
 
 @media(min-width:768px) {
     section {
-        padding: 150px 0;
+        padding: 50px 0;
     }
 }
 
