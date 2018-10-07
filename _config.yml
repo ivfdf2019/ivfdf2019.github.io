@@ -19,6 +19,9 @@ google_site_verification: googleXXXXXXXXXXXXXXXX.html
 
 include: ['_2019_pages']
 
+collections:
+  - 2019_team
+
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag
