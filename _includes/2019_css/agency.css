@@ -448,6 +448,10 @@ section h3.section-subheading {
     background: #3cb371;
 }
 
+.speakers-link img {
+    height: 300px;
+}
+
 #speakers .speakers-item .speakers-link .speakers-hover:hover {
     opacity: 1;
 }
