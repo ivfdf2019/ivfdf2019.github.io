@@ -5,7 +5,7 @@ name: scienceceilidh
 description:
 thumbnail: scienceceilidh.jpg
 youtube: 
-website: 
-facebook: 
+website: http://www.scienceceilidh.com/
+facebook: https://www.facebook.com/scienceceilidh/
 order: 5
 ---
