@@ -21,6 +21,7 @@ include: ['_2019_pages']
 
 collections:
   - 2019_team
+  - 2019_bands
 
 gems:
   - jekyll-sitemap
