@@ -3,9 +3,9 @@ title: Matthew Maclennan Dance Band
 dance: Scottish Country Dance
 name: maclennan
 description:
-thumbnail: maclennan.jpg
+thumbnail: mclennan.jpg
 youtube: 
-website: 
-facebook: 
+website: http://matthew-maclennan.co.uk/
+facebook: https://www.facebook.com/MatthewMaclennanDanceBand/ 
 order: 5
 ---
