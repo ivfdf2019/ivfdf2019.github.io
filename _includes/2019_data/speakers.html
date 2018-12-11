@@ -8,27 +8,23 @@
                 </div>
             </div>
             <div class="row">
-                <p>This year's bands include The Night Before, Monkey Box, No&Mi, An Conasg, Hekety, Science Ceilidh Band, Matthew Maclennan Dance Band and Naragonia. More details coming soon!</p>
-            </div>
-            <!--
-            <div class="row">
-            {% for post in site.categories.2019_speakers %}
+            {% assign bands = site.2019_bands | sort: 'order' %}
+            {% for band in band %}
                 <div class="col-md-4 col-sm-6 speakers-item">
-                    <a href="#{{ post.name }}" class="speakers-link" data-toggle="modal">
+                    <!--<a href="#{{ post.name }}" class="speakers-link" data-toggle="modal">
                         <div class="speakers-hover">
                             <div class="speakers-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
-                        </div>
-                        <img src="../css/2019_style/img/speaker/{{ post.thumbnail }}" class="img-responsive img-centered" alt="">
-                    </a>
+                        </div>-->
+                        <img src="../css/2019_style/img/bands/{{ band.thumbnail }}" class="img-responsive img-centered" alt="">
+                    <!--</a>-->
                     <div class="speakers-caption">
-                        <h4>{{ post.title }}</h4>
-                        <p class="text-muted">{{ post.subtitle }}</p>
+                        <h4>{{ band.title }}</h4>
+                        <p class="text-muted">{{ band.dance }}</p>
                     </div>
                 </div>
             {% endfor %}
             </div>
--->
         </div>
     </section>
