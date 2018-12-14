@@ -334,7 +334,7 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
-header {
+header#mainpage {
     height: 75vh;
     text-align: center;
     color: #fff;
