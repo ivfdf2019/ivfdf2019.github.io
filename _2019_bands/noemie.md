@@ -9,7 +9,7 @@ website: https://noemiesolo.jimdo.com/
 facebook: https://www.facebook.com/NoMi-256417611073531/
 venue: Potterrow
 day: Friday
-begin: 23:00
-end: 00:30
+begin: 23h00
+end: 00h30
 order: 3
 ---
