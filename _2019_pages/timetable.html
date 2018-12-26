@@ -28,7 +28,7 @@ title: Provisional timetable
       
       bands = [
       {% for band in site.2019_bands %}
-            {name: "{{ band.name }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}"  },
+            {title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}"  },
       {% endfor %}
       ];
       
@@ -44,7 +44,7 @@ title: Provisional timetable
       ftimetable.addLocations(venues);
       
       bands.filter(fridayNightBand).forEach(band => {
-            ftimetable.addEvent(band.name, band.venue, band.begin, band.end, { url: '#' });
+            ftimetable.addEvent(band.title + "("+band.dance+")", band.venue, band.begin, band.end, { url: '#' });
       })
       
       var renderer = new Timetable.Renderer(ftimetable);
