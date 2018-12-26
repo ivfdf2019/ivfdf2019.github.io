@@ -9,7 +9,7 @@ website: http://matthew-maclennan.co.uk/
 facebook: https://www.facebook.com/MatthewMaclennanDanceBand/ 
 venue: Lutton Place
 day: Saturday
-begin: 19:00
-end: 22:00
+begin: 19h00
+end: 22h00
 order: 7
 ---
