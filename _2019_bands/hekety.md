@@ -9,7 +9,7 @@ website:
 facebook: https://www.facebook.com/hekety/
 venue: South Hall
 day: Saturday
-begin: 21:30
-end: 00:00
+begin: 21h30
+end: 00h00
 order: 5
 ---
