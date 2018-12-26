@@ -6,18 +6,42 @@ title: Provisional timetable
 <section id="speakers" class="bg-light-gray">
 <div class="timetable"></div>
 <script>
+      
+      function makeDate(timeString, dayString) {
+            var date = new Date("2019-03-" + dayString + "T" + timeString.padStart(5, '0') + ":00")
+            if (date.getHours()<6) {
+                  // events after midnight actually happen on following day
+                  date.setDate(date.getDate() + 1) 
+            }
+            return date;
+      }
+      
+      function cleanBand(band) {
+            band.begin = makeDate(band.begin, "01")
+            band.end = makeDate(band.end, "01")
+      }
+      
       bands = [
       {% for band in site.2019_bands %}
             {name: "{{ band.name }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}"  },
       {% endfor %}
       ]
+      
+      var venues = {}
+      bands.forEach((band) => {
+            venues[band.venue] = 0
+            cleanBand(band)
+      })
+      venues = Object.keys(venues)
+      
       var ftimetable = new Timetable();
       ftimetable.setScope(18,2)
-      ftimetable.addLocations(['Potterrow', 'The Jam House']);
-      ftimetable.addEvent('Contra', 'Potterrow', new Date("2019-03-01T19:30:00"), new Date("2019-03-01T22:30:00"), { url: '#' });
-      ftimetable.addEvent('Bal', 'Potterrow', new Date("2019-03-01T23:00:00"), new Date("2019-03-02T00:30:00"), { url: '#' });
-      ftimetable.addEvent('Scottish Contra', 'The Jam House', new Date("2019-03-01T19:00:00"), new Date("2019-03-01T21:30:00"), { url: '#' });
-      ftimetable.addEvent('English Contra', 'The Jam House', new Date("2019-03-01T22:00:00"), new Date("2019-03-02T00:30:00"), { url: '#' });
+      ftimetable.addLocations(venues);
+      
+      bands.forEach((band) => {
+            ftimetable.addEvent(band.name, band.venue, band.begin, band.end, { url: '#' })
+      })
+      
       var renderer = new Timetable.Renderer(ftimetable);
       renderer.draw('.timetable');
     </script>
