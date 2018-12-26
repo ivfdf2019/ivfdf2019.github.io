@@ -25,8 +25,16 @@ title: Provisional timetable
             band.end = makeDate(band.end, "01");
       }
       
-      function fridayNightBand(band) {
-            return band.day=="Friday" || band.day=="Saturday";
+      function friNightBand(band) {
+            return band.day=="Friday";
+      }
+      
+      function satNightBand(band) {
+            return band.day=="Saturday";
+      }
+      
+      function addBand(timetable, band) {
+            timetable.addEvent(band.title + " ("+band.dance+")", band.venue, band.begin, band.end, { url: '#' });
       }
       
       bands = [
@@ -35,23 +43,40 @@ title: Provisional timetable
       {% endfor %}
       ];
       
-      var venues = {};
-      bands.filter(fridayNightBand).forEach((band) => {
-            venues[band.venue] = 0
+      var fvenues = {};
+      var svenues = {};
+      bands.filter(friNightBand).forEach((band) => {
+            fvenues[band.venue] = 0
             cleanBand(band)
       });
-      venues = Object.keys(venues);
+      bands.filter(satNightBand).forEach((band) => {
+            svenues[band.venue] = 0
+            cleanBand(band)
+      });
+      fvenues = Object.keys(fvenues);
+      svenues = Object.keys(svenues);
       
       var ftimetable = new Timetable();
       ftimetable.setScope(18,2);
-      ftimetable.addLocations(venues);
+      ftimetable.addLocations(fvenues);
       
-      bands.filter(fridayNightBand).forEach(band => {
-            ftimetable.addEvent(band.title + "("+band.dance+")", band.venue, band.begin, band.end, { url: '#' });
+      bands.filter(friNightBand).forEach(band => {
+            addBand(ftimetable, band);
       })
       
-      var renderer = new Timetable.Renderer(ftimetable);
-      renderer.draw('#fritimetable');
-      renderer.draw('#sattimetable');
+      var frenderer = new Timetable.Renderer(ftimetable);
+      frenderer.draw('#fritimetable');
+      
+      var stimetable = new Timetable();
+      stimetable.setScope(18,2);
+      stimetable.addLocations(svenues);
+      
+      bands.filter(satNightBand).forEach(band => {
+            addBand(stimetable, band);
+      })
+      
+      var srenderer = new Timetable.Renderer(stimetable);
+      srenderer.draw('#sattimetable');
+      
     </script>
 </section>
