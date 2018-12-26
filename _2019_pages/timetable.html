@@ -8,7 +8,7 @@ title: Provisional timetable
 <script>
       bands = [
       {% for band in site.2019_bands %}
-            {name: "{{ band.name }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance}}" },
+            {name: "{{ band.name }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}"  },
       {% endfor %}
       ]
       var ftimetable = new Timetable();
