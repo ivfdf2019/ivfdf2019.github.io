@@ -4,7 +4,10 @@ permalink: /2019/timetable
 title: Provisional timetable
 ---
 <section id="speakers" class="bg-light-gray">
-<div class="timetable"></div>
+      <h3>Friday Night</h3>
+      <div id="fritimetable" class="timetable"></div>
+      <h3>Saturday Night</h3>
+      <div id="sattimetable" class="timetable"></div>
 <script>
       
       function makeDate(timeString, dayString) {
@@ -48,6 +51,7 @@ title: Provisional timetable
       })
       
       var renderer = new Timetable.Renderer(ftimetable);
-      renderer.draw('.timetable');
+      renderer.draw('#fritimetable');
+      renderer.draw('#sattimetable');
     </script>
 </section>
