@@ -7,5 +7,9 @@ thumbnail: hekety.jpg
 youtube: 
 website: 
 facebook: https://www.facebook.com/hekety/
+venue: South Hall
+day: Saturday
+begin: 21:30
+end: 00:00
 order: 5
 ---
