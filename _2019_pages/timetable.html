@@ -4,7 +4,7 @@ permalink: /2019/timetable
 title: Provisional timetable
 ---
 <section id="speakers" class="bg-light-gray">
-<div class="fridaytimetable"></div>
+<div class="timetable"></div>
 <script>
       var ftimetable = new Timetable();
       ftimetable.setScope(18,2)
@@ -14,6 +14,6 @@ title: Provisional timetable
       ftimetable.addEvent('Scottish Contra', 'The Jam House', new Date(2015,7,17,19), new Date(2015,7,17,23,30), { url: '#' });
       ftimetable.addEvent('English Contra', 'The Jam House', new Date(2015,7,17,22), new Date(2015,7,18,00,30), { url: '#' });
       var renderer = new Timetable.Renderer(ftimetable);
-      renderer.draw('.fridaytimetable');
+      renderer.draw('.timetable');
     </script>
 </section>
