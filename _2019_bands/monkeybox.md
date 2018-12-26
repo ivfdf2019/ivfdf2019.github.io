@@ -10,6 +10,6 @@ facebook:
 venue: The Jam House
 day: Friday
 begin: 22h00
-end: 0h30
+end: 00h30
 order: 2
 ---
