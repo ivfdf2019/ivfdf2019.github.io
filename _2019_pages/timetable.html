@@ -8,6 +8,7 @@ title: Provisional timetable
 <script>
       
       function makeDate(timeString, dayString) {
+            timeString = timeString.replace(/h/i,":");
             var date = new Date("2019-03-" + dayString + "T" + timeString.padStart(5, '0') + ":00");
             if (date.getHours()<6) {
                   // events after midnight actually happen on following day
