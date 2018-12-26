@@ -9,7 +9,7 @@ website: http://www.thenightbeforeceilidh.co.uk/
 facebook: https://www.facebook.com/the.night.before.ceilidh/
 venue: SSCC
 day: Saturday
-begin: 19:00
-end: 22:30
+begin: 19h00
+end: 22h30
 order: 1
 ---
