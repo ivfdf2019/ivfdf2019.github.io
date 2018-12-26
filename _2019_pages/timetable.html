@@ -6,6 +6,11 @@ title: Provisional timetable
 <section id="speakers" class="bg-light-gray">
 <div class="timetable"></div>
 <script>
+      bands = [
+      {% for band in site.2019_bands %}
+            {name: band.name, begin: band.begin, end: band.end, venue: band.venue, dance: band.dance},
+      {% endfor %}
+      ]
       var ftimetable = new Timetable();
       ftimetable.setScope(18,2)
       ftimetable.addLocations(['Potterrow', 'The Jam House']);
