@@ -55,9 +55,13 @@ title: Provisional timetable
       
       bands = [
       {% for band in site.2019_bands %}
-            {title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}"  },
+            {title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}"},
       {% endfor %}
       ];
+      
+      {% for band in site.2019_otherevents %}
+            bands.push({title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}"})
+      {% endfor %}
       
       doDay('#fritimetable', bands.filter(friNightBand));
       doDay('#sattimetable', bands.filter(satNightBand));
