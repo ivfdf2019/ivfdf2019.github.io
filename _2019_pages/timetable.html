@@ -33,8 +33,24 @@ title: Provisional timetable
             return band.day=="Saturday";
       }
       
-      function addBand(timetable, band) {
-            timetable.addEvent(band.title + " ("+band.dance+")", band.venue, band.begin, band.end, { url: '#' });
+      function doDay(id, bands) {
+            var venues = {};
+            bands.forEach((band) => {
+                  venues[band.venue] = 0
+                  cleanBand(band)
+            });
+            venues = Object.keys(venues);
+
+            var timetable = new Timetable();
+            timetable.setScope(18,2);
+            timetable.addLocations(fvenues);
+
+            bands.forEach(band => {
+                  timetable.addEvent(band.title + " ("+band.dance+")", band.venue, band.begin, band.end, { url: '#' });
+            })
+
+            var renderer = new Timetable.Renderer(timetable);
+            renderer.draw(id);
       }
       
       bands = [
@@ -43,40 +59,8 @@ title: Provisional timetable
       {% endfor %}
       ];
       
-      var fvenues = {};
-      var svenues = {};
-      bands.filter(friNightBand).forEach((band) => {
-            fvenues[band.venue] = 0
-            cleanBand(band)
-      });
-      bands.filter(satNightBand).forEach((band) => {
-            svenues[band.venue] = 0
-            cleanBand(band)
-      });
-      fvenues = Object.keys(fvenues);
-      svenues = Object.keys(svenues);
-      
-      var ftimetable = new Timetable();
-      ftimetable.setScope(18,2);
-      ftimetable.addLocations(fvenues);
-      
-      bands.filter(friNightBand).forEach(band => {
-            addBand(ftimetable, band);
-      })
-      
-      var frenderer = new Timetable.Renderer(ftimetable);
-      frenderer.draw('#fritimetable');
-      
-      var stimetable = new Timetable();
-      stimetable.setScope(18,2);
-      stimetable.addLocations(svenues);
-      
-      bands.filter(satNightBand).forEach(band => {
-            addBand(stimetable, band);
-      })
-      
-      var srenderer = new Timetable.Renderer(stimetable);
-      srenderer.draw('#sattimetable');
+      doDay('#fritimetable', bands.filter(friNightBand));
+      doDay('#sattimetable', bands.filter(satNightBand));
       
     </script>
 </section>
