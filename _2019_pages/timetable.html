@@ -43,7 +43,7 @@ title: Provisional timetable
 
             var timetable = new Timetable();
             timetable.setScope(18,2);
-            timetable.addLocations(fvenues);
+            timetable.addLocations(venues);
 
             bands.forEach(band => {
                   timetable.addEvent(band.title + " ("+band.dance+")", band.venue, band.begin, band.end, { url: '#' });
