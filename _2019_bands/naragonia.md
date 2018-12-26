@@ -9,7 +9,7 @@ website: http://naragonia.com/en
 facebook: https://www.facebook.com/pg/pascalerubens/
 venue: The Debating Hall
 day: Saturday
-begin: 22:00
-end: 00:00
+begin: 22h00
+end: 00h00
 order: 8
 ---
