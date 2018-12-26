@@ -8,38 +8,42 @@ title: Provisional timetable
 <script>
       
       function makeDate(timeString, dayString) {
-            var date = new Date("2019-03-" + dayString + "T" + timeString.padStart(5, '0') + ":00")
+            var date = new Date("2019-03-" + dayString + "T" + timeString.padStart(5, '0') + ":00");
             if (date.getHours()<6) {
                   // events after midnight actually happen on following day
-                  date.setDate(date.getDate() + 1) 
+                  date.setDate(date.getDate() + 1);
             }
             return date;
       }
       
       function cleanBand(band) {
-            band.begin = makeDate(band.begin, "01")
-            band.end = makeDate(band.end, "01")
+            band.begin = makeDate(band.begin, "01");
+            band.end = makeDate(band.end, "01");
+      }
+      
+      function fridayNightBand(band) {
+            return band.day=="Friday" || band.day=="Saturday";
       }
       
       bands = [
       {% for band in site.2019_bands %}
             {name: "{{ band.name }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}"  },
       {% endfor %}
-      ]
+      ];
       
-      var venues = {}
-      bands.forEach((band) => {
+      var venues = {};
+      bands.filter(fridayNightBand).forEach((band) => {
             venues[band.venue] = 0
             cleanBand(band)
-      })
-      venues = Object.keys(venues)
+      });
+      venues = Object.keys(venues);
       
       var ftimetable = new Timetable();
-      ftimetable.setScope(18,2)
+      ftimetable.setScope(18,2);
       ftimetable.addLocations(venues);
       
-      bands.forEach((band) => {
-            ftimetable.addEvent(band.name, band.venue, band.begin, band.end, { url: '#' })
+      bands.filter(fridayNightBand).forEach(band => {
+            ftimetable.addEvent(band.name, band.venue, band.begin, band.end, { url: '#' });
       })
       
       var renderer = new Timetable.Renderer(ftimetable);
