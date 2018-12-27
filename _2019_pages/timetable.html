@@ -69,7 +69,7 @@ title: Provisional timetable
        
       var ftimetable = new Timetable();
       ftimetable.setScope(18,2);
-       timetable.addLocations(["The Jam House"]);
+      ftimetable.addLocations(["The Jam House"]);
       ftimetable.addEvent('Scottish Contra', 'The Jam House', new Date(2015,7,17,19), new Date(2015,7,17,23,30), { url: '#' });
       ftimetable.addEvent('English Contra', 'The Jam House', new Date(2015,7,17,22), new Date(2015,7,18,00,30), { url: '#' });
       var renderer = new Timetable.Renderer(ftimetable);
