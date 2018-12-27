@@ -36,7 +36,7 @@ title: Provisional timetable
       
       function doDay(id, bands) {
             var venues = {};
-            bands.forEach((band) => {
+            bands.forEach(function(band) {
                   venues[band.venue] = 0
                   cleanBand(band)
             });
@@ -46,7 +46,7 @@ title: Provisional timetable
             timetable.setScope(18,2);
             timetable.addLocations(venues);
 
-            bands.forEach(band => {
+            bands.forEach(function(band) {
                   timetable.addEvent(band.title + " ("+band.dance+")", band.venue, band.begin, band.end, { url: '#' });
             })
 
