@@ -4,7 +4,6 @@ permalink: /2019/timetable
 title: Provisional timetable
 ---
 <section id="speakers" class="bg-light-gray">
-      <div id="testtimetable" class="timetable"></div>
       <h3>Friday Night</h3>
       <div id="fritimetable" class="timetable"></div>
       <h3>Saturday Night</h3>
@@ -77,14 +76,6 @@ title: Provisional timetable
       
       doDay('#fritimetable', bands.filter(friNightBand));
       doDay('#sattimetable', bands.filter(satNightBand));
-       
-      var ftimetable = new Timetable();
-      ftimetable.setScope(18,2);
-      ftimetable.addLocations(["The Jam House"]);
-      ftimetable.addEvent('Scottish Contra', 'The Jam House', new Date(2015,7,17,19), new Date(2015,7,17,23,30), { url: '#' });
-      ftimetable.addEvent('English Contra', 'The Jam House', new Date(2015,7,17,22), new Date(2015,7,18,00,30), { url: '#' });
-      var renderer = new Timetable.Renderer(ftimetable);
-      renderer.draw('#testtimetable');
       
     </script>
 </section>
