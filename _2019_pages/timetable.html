@@ -19,7 +19,7 @@ title: Provisional timetable
       }
       
       function getLocalTimezoneIso() {
-            return "+"+Math.floor(new Date().getTimezoneOffset() / -60)+":00"
+            return "+"+ padStart(Math.floor(new Date().getTimezoneOffset() / -60)+":00", 5, '0');
       }
       
       function makeDate(timeString, dayString) {
