@@ -11,9 +11,16 @@ title: Provisional timetable
       <div id="sattimetable" class="timetable"></div>
 <script>
       
+      function padStart(s, count, character) {
+            for (count = count-s.length; count>0; count--) {
+                  s = character + s;
+            }
+            return s;
+      }
+      
       function makeDate(timeString, dayString) {
             timeString = timeString.replace(/h/i,":");
-            var date = new Date("2019-03-" + dayString + "T" + timeString.padStart(5, '0') + ":00");
+            var date = new Date("2019-03-" + dayString + "T" + padStart(timeString, 5, '0') + ":00");
             if (date.getHours()<6) {
                   // events after midnight actually happen on following day
                   date.setDate(date.getDate() + 1);
