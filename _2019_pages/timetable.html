@@ -21,7 +21,7 @@ title: Provisional timetable
       function makeDate(timeString, dayString) {
             timeString = timeString.replace(/h/i,":");
             var date = new Date("2019-03-" + dayString + "T" + padStart(timeString, 5, '0') + ":00");
-            if (date.getHours()<6) {
+            if (date.getUTCHours()<6) {
                   // events after midnight actually happen on following day
                   date.setDate(date.getDate() + 1);
             }
