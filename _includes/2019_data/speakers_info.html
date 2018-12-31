@@ -1,6 +1,7 @@
  <!-- Portfolio Modals -->
- {% for post in site.categories.2019_speakers %}
-    <div class="portfolio-modal modal fade" id="{{ post.name }}" tabindex="-1" role="dialog" aria-hidden="true">
+ {% assign bands = site.2019_bands| sort: 'order' %}
+ {% for band in bands %}
+    <div class="portfolio-modal modal fade" id="{{ band.name }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -12,11 +13,11 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>{{ post.title }}</h2>
+                            <h2>{{ band.title }}</h2>
                             <hr class="star-primary">
-                            <img src="../css/2019_style/img/speaker/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
-                            <h3>Topic: {{ post.topic }}</h3>
-                            <p>{{ post.description }}</p>
+                            <img src="../css/2019_style/img/bands/{{ band.thumbnail }}" class="img-responsive img-centered" alt="{{ post.alt }}">
+                            <p>{{ band.description }}</p>
+                            <p>This band will be playing for {{ band.dance }} on {{ band.day }} (provisional schedule)
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
