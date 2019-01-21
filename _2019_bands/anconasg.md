@@ -8,8 +8,8 @@ youtube:
 website: 
 facebook: https://www.facebook.com/anconasg/
 venue: The Jam House
-day: Friday
+day: Saturday
 begin: 19h00
-end: 21h30
+end: 22h30
 order: 4
 ---
