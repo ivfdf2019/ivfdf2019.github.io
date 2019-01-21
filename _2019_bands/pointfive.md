@@ -10,6 +10,6 @@ facebook: https://www.facebook.com/PointFiveCeilidh
 venue: SSCC
 day: Saturday
 begin: 19h00
-end: 22h30
+end: 21h30
 order: 11
 ---
