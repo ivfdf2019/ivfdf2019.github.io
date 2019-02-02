@@ -7,7 +7,7 @@ thumbnail: pointfive.jpg
 youtube: 
 website: https://www.pointfiveceilidh.com/
 facebook: https://www.facebook.com/PointFiveCeilidh
-venue: SSCC
+venue: The Jam House
 day: Saturday
 begin: 19h00
 end: 21h30
