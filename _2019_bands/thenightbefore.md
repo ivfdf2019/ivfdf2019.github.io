@@ -10,6 +10,7 @@ facebook: https://www.facebook.com/the.night.before.ceilidh/
 venue: SSCC
 day: Saturday
 begin: 19h00
-end: 22h30
+end: 21h45
+caller: Rhodri Davies
 order: 1
 ---
