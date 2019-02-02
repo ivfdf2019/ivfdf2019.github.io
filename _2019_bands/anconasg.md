@@ -7,7 +7,7 @@ thumbnail: anconasg.jpg
 youtube: 
 website: 
 facebook: https://www.facebook.com/anconasg/
-venue: The Jam House
+venue: SSCC
 day: Saturday
 begin: 19h30
 end: 00h30
