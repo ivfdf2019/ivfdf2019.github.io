@@ -8,7 +8,7 @@ youtube:
 website: https://www.pointfiveceilidh.com/
 facebook: https://www.facebook.com/PointFiveCeilidh
 venue: The Jam House
-day: Saturday
+day: Friday
 begin: 19h00
 end: 21h30
 caller: Xavier and Kieran
