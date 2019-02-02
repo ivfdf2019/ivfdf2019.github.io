@@ -11,5 +11,6 @@ venue: Lutton Place
 day: Saturday
 begin: 19h00
 end: 22h00
+caller: Liz and Kirstin
 order: 7
 ---
