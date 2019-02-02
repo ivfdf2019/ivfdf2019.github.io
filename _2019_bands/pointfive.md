@@ -11,5 +11,6 @@ venue: SSCC
 day: Saturday
 begin: 19h00
 end: 21h30
+caller: Xavier and Kieran
 order: 11
 ---
