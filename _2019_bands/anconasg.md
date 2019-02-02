@@ -9,7 +9,8 @@ website:
 facebook: https://www.facebook.com/anconasg/
 venue: The Jam House
 day: Saturday
-begin: 19h00
-end: 22h30
+begin: 19h30
+end: 00h30
+caller: Neil Wignall
 order: 4
 ---
