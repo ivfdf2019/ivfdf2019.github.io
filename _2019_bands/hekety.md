@@ -7,9 +7,10 @@ thumbnail: hekety.jpg
 youtube: 
 website: 
 facebook: https://www.facebook.com/hekety/
-venue: South Hall
+venue: Debating Hall
 day: Saturday
-begin: 21h30
-end: 00h00
+begin: 21h00
+end: 00h30
+caller: Lisa Heywood
 order: 5
 ---
