@@ -17,7 +17,7 @@
                             <hr class="star-primary">
                             <img src="../css/2019_style/img/bands/{{ band.thumbnail }}" class="img-responsive img-centered" alt="{{ post.alt }}">
                             <p>{{ band.description }}</p>
-                            <p>They will be playing for <em>{{ band.dance }}</em>.</p>
+                            <p>They will be playing for <em>{{ band.dance }}, {% if band.caller %}and will be called by {{ band.caller }}{% endif %}</em>.</p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
