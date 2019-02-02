@@ -11,5 +11,6 @@ venue: The Jam House
 day: Friday
 begin: 22h00
 end: 00h30
+caller: Andrew Swaine
 order: 2
 ---
