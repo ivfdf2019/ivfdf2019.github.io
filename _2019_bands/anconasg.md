@@ -7,7 +7,7 @@ thumbnail: anconasg.jpg
 youtube: 
 website: 
 facebook: https://www.facebook.com/anconasg/
-venue: SSCC
+venue: Southside Community Centre
 day: Saturday
 begin: 19h30
 end: 00h30
