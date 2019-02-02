@@ -7,7 +7,7 @@ thumbnail: naragonia.jpg
 youtube: 
 website: http://naragonia.com/en
 facebook: https://www.facebook.com/pg/pascalerubens/
-venue: The Debating Hall
+venue: South Hall
 day: Saturday
 begin: 22h00
 end: 00h00
