@@ -7,7 +7,7 @@ thumbnail: noemie.jpg
 youtube: https://www.youtube.com/watch?v=-dOGZ9tZlKo
 website: https://noemiesolo.jimdo.com/
 facebook: https://www.facebook.com/NoMi-256417611073531/
-venue: Potterrow
+venue: Potterrow The Venue
 day: Friday
 begin: 23h00
 end: 00h30
