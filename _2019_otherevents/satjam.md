@@ -1,7 +1,7 @@
 ---
 title: Late Night
 dance: Jam
-venue: The Debating Hall
+venue: Debating Hall
 day: Saturday
 begin: 0h30
 end: 3h00
