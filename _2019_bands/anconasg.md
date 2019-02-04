@@ -9,8 +9,8 @@ website:
 facebook: https://www.facebook.com/anconasg/
 venue: Southside Community Centre
 day: Saturday
-begin: 19h30
-end: 00h30
+begin: 20h00
+end: 23h30
 caller: Neil Wignall
 order: 4
 ---
