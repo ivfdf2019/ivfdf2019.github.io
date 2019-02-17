@@ -4,6 +4,7 @@ permalink: /2019/timetable
 title: Provisional timetable
 ---
 <section id="speakers" class="bg-light-gray">
+      <p>All workshops and dances are called gender free unless indicated with *.</p>
       <h2>Evening Schedule</h2>
       <p>The exact timings and venues are potentially subject to change, but the bands and days should be correct.</p>
        <h3>Friday Night</h3>
@@ -90,7 +91,7 @@ title: Provisional timetable
                         begin: begintimes[workshop.position],
                         end: endtimes[workshop.position],
                         day: days[workshop.position],
-                        dance: workshop.runner,
+                        dance: "",
                         venue: workshop.venue,
                         gender: workshop.gender
                   };
@@ -110,7 +111,11 @@ title: Provisional timetable
             timetable.addLocations(venues);
 
             bands.forEach(function(band) {
-                  timetable.addEvent(band.title + " ("+band.dance+")", band.venue, band.begin, band.end, { url: '#' });
+                  var fulltitle = band.title + band.gender
+                  if (band.dance != "") {
+                        fulltitle += " ("+band.dance+")"
+                  }
+                  timetable.addEvent(fulltitle , band.venue, band.begin, band.end, { url: '#' });
             })
 
             var renderer = new Timetable.Renderer(timetable);
