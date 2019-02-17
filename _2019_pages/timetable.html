@@ -129,7 +129,7 @@ title: Provisional timetable
       ];
       
       {% for band in site.2019_otherevents %}
-            bands.push({title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}"})
+            bands.push({title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}", gender:""})
       {% endfor %}
       
       daytime = processWorkshops(workshops);
