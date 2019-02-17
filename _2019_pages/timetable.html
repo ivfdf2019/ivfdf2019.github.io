@@ -4,7 +4,7 @@ permalink: /2019/timetable
 title: Provisional timetable
 ---
 <section id="speakers" class="bg-light-gray">
-      <p>All workshops and dances are called gender free unless indicated with *.</p>
+      <p>All workshops and dances are called gender free unless indicated with * (in which case they may or may not use gender terms).</p>
       <h2>Evening Schedule</h2>
       <p>The exact timings and venues are potentially subject to change, but the bands and days should be correct.</p>
        <h3>Friday Night</h3>
@@ -133,6 +133,9 @@ title: Provisional timetable
       {% endfor %}
       
       daytime = processWorkshops(workshops);
+       
+      daytime.push({title: "Science Ceilidh", begin: "14h00", end: "17h00", venue: "SSCC - big hall", dance: "Display Ceilidh", day: "Saturday", gender:"*"})
+      daytime.push({title: "Survivor's Ceilidh", begin: "13h30", end: "16h00", venue: "SSCC - big hall", dance: "", day: "Sunday", gender:"*"})
       
       doDay('#fritimetable', bands.filter(isFriday), 19, 3);
       doDay('#sattimetable', bands.filter(isSaturday), 19, 3);
