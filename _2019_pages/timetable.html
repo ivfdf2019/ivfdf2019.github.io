@@ -87,7 +87,7 @@ title: Provisional timetable
       function processWorkshops(workshops) {
             return workshops.map(function(workshop) {
                   return {
-                        title: workshop.title,
+                        title: workshop.shorttitle,
                         begin: begintimes[workshop.position],
                         end: endtimes[workshop.position],
                         day: days[workshop.position],
