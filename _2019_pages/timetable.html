@@ -97,7 +97,7 @@ title: Provisional timetable
             });
       }
       
-      function doDay(id, bands) {
+      function doDay(id, bands, begin, end) {
             var venues = {};
             bands.forEach(function(band) {
                   venues[band.venue] = 0
@@ -106,7 +106,7 @@ title: Provisional timetable
             venues = Object.keys(venues);
 
             var timetable = new Timetable();
-            timetable.setScope(18,3);
+            timetable.setScope(begin,end);
             timetable.addLocations(venues);
 
             bands.forEach(function(band) {
@@ -129,10 +129,10 @@ title: Provisional timetable
       
       daytime = processWorkshops(workshops);
       
-      doDay('#fritimetable', bands.filter(isFriday));
-      doDay('#sattimetable', bands.filter(isSaturday));
-      doDay('#satdaytimetable', daytime.filter(isSaturday))
-      doDay('#sundaytimetable', daytime.filter(isSunday))
+      doDay('#fritimetable', bands.filter(isFriday), 18, 3);
+      doDay('#sattimetable', bands.filter(isSaturday), 18, 3);
+      doDay('#satdaytimetable', daytime.filter(isSaturday), 9, 6)
+      doDay('#sundaytimetable', daytime.filter(isSunday), 9, 6)
       
     </script>
 </section>
