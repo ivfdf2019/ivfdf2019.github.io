@@ -4,12 +4,18 @@ permalink: /2019/timetable
 title: Provisional timetable
 ---
 <section id="speakers" class="bg-light-gray">
+      <h2>Evening Schedule</h2>
       <p>The exact timings and venues are potentially subject to change, but the bands and days should be correct.</p>
-      <p>The daytime schedule is still being finalised. Workshops will run 9am-1.15pm both days. The Display Ceilidh will run 2-5pm on Saturday. The Survivors Ceilidh will run 1.30-4pm on Sunday.</p>
-      <h3>Friday Night</h3>
+       <h3>Friday Night</h3>
       <div id="fritimetable" class="timetable"></div>
       <h3>Saturday Night</h3>
       <div id="sattimetable" class="timetable"></div>
+      <h2>Daytime schedule</h2>
+       <p>The daytime schedule is still being finalised. Workshops will run 9am-1.15pm both days. The Display Ceilidh will run 2-5pm on Saturday. The Survivors Ceilidh will run 1.30-4pm on Sunday.</p>
+      <h3>Saturday</h3>
+      <div id="satdaytimetable" class="timetable"></div>
+      <h3>Sunday</h3>
+      <div id="sundaytimetable" class="timetable"></div>
 <script>
       
       function padStart(s, count, character) {
@@ -38,12 +44,57 @@ title: Provisional timetable
             band.end = makeDate(band.end, "01");
       }
       
-      function friNightBand(band) {
+      function isFriday(band) {
             return band.day=="Friday";
       }
       
-      function satNightBand(band) {
+      function isSaturday(band) {
             return band.day=="Saturday";
+      }
+      
+      function isSunday(band) {
+            return band.day=="Sunday";
+      }
+      
+      var begintimes = {
+            "1": "9h00",
+            "2": "10h30",
+            "3": "12h",
+            "4": "9h00",
+            "5": "10h30",
+            "6": "12h"
+      }
+      
+      var endtimes = {
+            "1": "10h15",
+            "2": "11h45",
+            "3": "13h15",
+            "4": "10h15",
+            "5": "11h45",
+            "6": "13h15"
+      }
+      
+      var days = {
+            "1": "Saturday",
+            "2": "Saturday",
+            "3": "Saturday",
+            "4": "Sunday",
+            "5": "Sunday",
+            "6": "Sunday"
+      }
+      
+      function processWorkshops(workshops) {
+            return workshops.map(function(workshop) {
+                  return {
+                        title: workshop.title,
+                        begin: begintimes[workshop.position],
+                        end: endtimes[workshop.position],
+                        day: days[workshop.position],
+                        dance: workshop.runner,
+                        venue: workshop.venue,
+                        gender: workshop.gender
+                  };
+            });
       }
       
       function doDay(id, bands) {
@@ -76,8 +127,12 @@ title: Provisional timetable
             bands.push({title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}"})
       {% endfor %}
       
-      doDay('#fritimetable', bands.filter(friNightBand));
-      doDay('#sattimetable', bands.filter(satNightBand));
+      daytime = processWorkshops(workshops);
+      
+      doDay('#fritimetable', bands.filter(isFriday));
+      doDay('#sattimetable', bands.filter(isSaturday));
+      doDay('#satdaytimetable', daytime.filter(isSaturday))
+      doDay('#sundaytimetable', daytime.filter(isSunday))
       
     </script>
 </section>
