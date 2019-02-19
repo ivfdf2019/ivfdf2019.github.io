@@ -96,7 +96,6 @@ title: Schedule
       function processWorkshops(workshops) {
             return workshops.map(function(workshop) {
                   return {
-                        longtitle: workshop.title,
                         title: workshop.shorttitle,
                         begin: begintimes[workshop.position],
                         end: endtimes[workshop.position],
@@ -104,7 +103,7 @@ title: Schedule
                         dance: "",
                         venue: workshop.venue,
                         gender: workshop.gender,
-                        id: "workshop"+workshop.id
+                        id: "workshop"+workshop.id,
                   };
             });
       }
@@ -165,9 +164,9 @@ title: Schedule
       
       $(document).ready(function() {
             var $div = $("#speakers")
-            daytime.forEach(function(workshop) {
-                  var fulltitle = (workshop.longtitle || workshop.title) + workshop.gender
-                  var htmlString = '<div class="portfolio-modal modal fade" id="'+ workshop.id +'" tabindex="-1" role="dialog" aria-hidden="true">'
+            workshops.forEach(function(workshop) {
+                  var fulltitle = workshop.title + workshop.gender
+                  var htmlString = '<div class="portfolio-modal modal fade" id="'+ "workshop"+workshop.id +'" tabindex="-1" role="dialog" aria-hidden="true">'
                   htmlString += '<div class="modal-content">'
                   htmlString += ' <div class="close-modal" data-dismiss="modal">'
                   htmlString += '  <div class="lr">'
@@ -181,7 +180,7 @@ title: Schedule
                   htmlString += '    <div class="modal-body">'
                   htmlString += '     <h2>' + fulltitle + '</h2>'
                   htmlString += '     <hr class="star-primary">'
-                  htmlString += '     <p>with <em>' + workshop.dance + '</em></p>'
+                  htmlString += '     <p>with <em>' + workshop.runner + '</em></p>'
                   htmlString += '     <p>' + workshop.description + '</p>'
                   htmlString += '     <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>'
                   htmlString += '    </div>'
