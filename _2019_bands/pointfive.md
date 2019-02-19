@@ -1,7 +1,7 @@
 ---
 title: Point Five
 dance: Scottish Ceilidh
-name: point five
+name: pointfive
 description: Beautiful, energetic and fiddle heavy Scottish Ceilidh
 thumbnail: pointfive.jpg
 youtube: 
