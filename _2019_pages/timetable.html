@@ -124,7 +124,17 @@ title: Schedule
                   if (band.dance != "") {
                         fulltitle += " ("+band.dance+")"
                   }
-                  timetable.addEvent(fulltitle , band.venue, band.begin, band.end, { url: '#' });
+                  var options = { url: '#' }
+                  if (band.id) {
+                        options = {
+                              url: '#' + band.id,
+                              class: 'speakers-link',
+                              data: {
+                                    toggle: 'modal'
+                              }
+                        }
+                  }
+                  timetable.addEvent(fulltitle , band.venue, band.begin, band.end, options);
             })
 
             var renderer = new Timetable.Renderer(timetable);
@@ -133,7 +143,7 @@ title: Schedule
       
       bands = [
       {% for band in site.2019_bands %}
-            {title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}", gender:""},
+            {title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}", gender:"", id: band.name},
       {% endfor %}
       ];
       
