@@ -96,13 +96,15 @@ title: Schedule
       function processWorkshops(workshops) {
             return workshops.map(function(workshop) {
                   return {
+                        longtitle: workshop.title,
                         title: workshop.shorttitle,
                         begin: begintimes[workshop.position],
                         end: endtimes[workshop.position],
                         day: days[workshop.position],
                         dance: "",
                         venue: workshop.venue,
-                        gender: workshop.gender
+                        gender: workshop.gender,
+                        id: workshop.id
                   };
             });
       }
@@ -161,6 +163,36 @@ title: Schedule
       doDay('#satdaytimetable', daytime.filter(isSaturday), 9, 17)
       doDay('#sundaytimetable', daytime.filter(isSunday), 9, 17)
       
+      $(document).ready(function() {
+            var $div = $("#speakers")
+            daytime.forEach(function(workshop) {
+                  var fulltitle = (workshop.longtitle || workshop.title) + workshop.gender
+                  var htmlString = '<div class="portfolio-modal modal fade" id="'+ workshop.id +'" tabindex="-1" role="dialog" aria-hidden="true">'
+                  htmlString += '<div class="modal-content">'
+                  htmlString += ' <div class="close-modal" data-dismiss="modal">'
+                  htmlString += '  <div class="lr">'
+                  htmlString += '   <div class="rl">'
+                  htmlString += '   </div>'
+                  htmlString += '  </div>'
+                  htmlString += ' </div>'
+                  htmlString += ' <div class="container">'
+                  htmlString += '  <div class="row">'
+                  htmlString += '   <div class="col-lg-8 col-lg-offset-2">'
+                  htmlString += '    <div class="modal-body">'
+                  htmlString += '     <h2>' + fulltitle + '</h2>'
+                  htmlString += '     <hr class="star-primary">'
+                  htmlString += '     <p>with <em>' + workshop.dance + '</em></p>'
+                  htmlString += '     <p>' + workshop.description + '</p>'
+                  htmlString += '     <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>'
+                  htmlString += '    </div>'
+                  htmlString += '   </div>'
+                  htmlString += '  </div>'
+                  htmlString += '  </div>'
+                  htmlString += ' </div>'
+                  htmlString += '</div>'
+                  $div.after(htmlString)
+            })
+      })
     </script>
             </div>      
 </section>
