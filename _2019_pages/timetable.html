@@ -155,8 +155,8 @@ title: Schedule
       
       daytime = processWorkshops(workshops);
        
-      daytime.push({title: "Science Ceilidh", begin: "14h00", end: "17h00", venue: "SSCC - big hall", dance: "Display Ceilidh", day: "Saturday", gender:"*"})
-      daytime.push({title: "Survivor's Ceilidh", begin: "13h30", end: "16h00", venue: "SSCC - big hall", dance: "", day: "Sunday", gender:"*"})
+      daytime.push({title: "Science Ceilidh", begin: "14h00", end: "17h00", venue: "SSCC - big hall", dance: "Display Ceilidh", day: "Saturday", gender:"*", id:"scienceceilidh"})
+      daytime.push({title: "Survivor's Ceilidh", begin: "13h30", end: "16h00", venue: "SSCC - big hall", dance: "", day: "Sunday", gender:"*", id:"survivorsceilidh"})
       
       doDay('#fritimetable', bands.filter(isFriday), 19, 3);
       doDay('#sattimetable', bands.filter(isSaturday), 19, 3);
