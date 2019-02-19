@@ -143,12 +143,12 @@ title: Schedule
       
       bands = [
       {% for band in site.2019_bands %}
-            {title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}", gender:"", id: band.name},
+            {title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}", gender: "", id: "{{ band.name }}"},
       {% endfor %}
       ];
       
       {% for band in site.2019_otherevents %}
-            bands.push({title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}", gender:""})
+            bands.push({title: "{{ band.title }}", begin: "{{ band.begin }}", end: "{{ band.end }}", venue: "{{ band.venue }}", dance: "{{ band.dance }}", day: "{{ band.day }}", gender: ""})
       {% endfor %}
       
       daytime = processWorkshops(workshops);
