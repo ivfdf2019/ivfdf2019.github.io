@@ -18,6 +18,11 @@
                             <img src="../css/2019_style/img/bands/{{ band.thumbnail }}" class="img-responsive img-centered" alt="{{ post.alt }}">
                             <p>{{ band.description }}</p>
                          <p>{{ band.title }} will be playing for <em>{{ band.dance }}</em>{% if band.caller %}, and will be called by {{ band.caller }}{% endif %}.</p>
+                         <p>Links: 
+                          {% if band.website %}<a href="{{ band.website }}">website</a> {% endif %}
+                          {% if band.website %}<a href="{{ band.facebook }}">facebook</a> {% endif %}
+                          {% if band.website %}<a href="{{ band.youtube }}">video</a> {% endif %}
+                         </p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
