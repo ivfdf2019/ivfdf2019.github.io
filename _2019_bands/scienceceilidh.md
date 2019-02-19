@@ -1,6 +1,6 @@
 ---
 title: Science Ceilidh
-dance: Ceilidh
+dance: Display Ceilidh
 name: scienceceilidh
 description:
 thumbnail: scienceceilidh.jpg
