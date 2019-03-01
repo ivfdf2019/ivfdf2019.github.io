@@ -7,7 +7,7 @@ thumbnail: hoik.jpg
 youtube: 
 website:
 facebook:
-venue: Potterrow The Venue
+venue: Potterrow - The Venue
 day: Friday
 begin: 19h30
 end: 22h30
