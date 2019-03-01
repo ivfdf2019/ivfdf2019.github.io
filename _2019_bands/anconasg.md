@@ -7,7 +7,7 @@ thumbnail: anconasg.jpg
 youtube: 
 website: 
 facebook: https://www.facebook.com/anconasg/
-venue: Southside Community Centre
+venue: Southside Community Centre - Hobgoblin Stage
 day: Saturday
 begin: 20h00
 end: 23h30
