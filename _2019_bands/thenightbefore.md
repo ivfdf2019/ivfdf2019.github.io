@@ -7,7 +7,7 @@ thumbnail: thenightbefore.jpg
 youtube: 
 website: http://www.thenightbeforeceilidh.co.uk/
 facebook: https://www.facebook.com/the.night.before.ceilidh/
-venue: South Hall
+venue: Pollock Halls - South Hall
 day: Saturday
 begin: 19h00
 end: 21h45
