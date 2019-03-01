@@ -7,7 +7,7 @@ thumbnail: hekety.jpg
 youtube: 
 website: 
 facebook: https://www.facebook.com/hekety/
-venue: Debating Hall
+venue: Teviot - Debating Hall
 day: Saturday
 begin: 21h00
 end: 00h30
